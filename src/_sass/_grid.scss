@@ -1,0 +1,58 @@
+//Grid
+
+// Breakpoints
+
+/// @example scss - Usage
+/// @include breakpoint('40em');
+
+@mixin breakpoint($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin inverse-breakpoint($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 2.125rem;
+  grid-row-gap: 2.125rem;
+}
+.grid-2 {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap:2.125rem;
+  grid-row-gap: 2.125rem;
+}
+.grid-3 {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap:2.125rem;
+  grid-row-gap: 2.125rem;
+}
+
+.grid-4 {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap:2.125rem;
+  grid-row-gap: 2.125rem;
+}
+.grid-1-2 {
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap:2.125rem;
+  grid-row-gap: 2.125rem;
+}
+.grid-3-2 {
+  display:grid;
+  grid-template-columns: 2fr 2fr;
+  grid-column-gap:2.125rem;
+  grid-row-gap: 2.125rem;
+}
+
+.employee-container {}

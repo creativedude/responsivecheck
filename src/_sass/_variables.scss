@@ -1,0 +1,67 @@
+/*
+   Color and sizing variables
+   ========================================================================== */
+
+// Variables ===================================================================================== /
+
+//Atura colours
+
+$celestial-blue: #6482a9;
+$midnight-blue: #035675;
+$aquamarine: #51c2be;
+$charcoal: #333333;
+
+$nmlblue: $celestial-blue;
+$nmlorange: #f3713d;
+$nmlpink:#da2060;
+
+$nmldarkblue: $midnight-blue;
+$nmldarkorange: #ae3529;
+$nmldarkpink: #73256e;
+
+$trans-blue:rgba(28, 171, 226, 0.3);
+
+// Variable colours
+
+$medium-aquamarine: #58d2a5;
+$light-crimson: #f56b97;
+
+// Fonts
+
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$base-color: $charcoal;
+
+// Errors, warnings, completions
+
+$success: #00B2A9;
+$warning: #F2A900;
+$alert: #D22630;
+
+//Greys
+
+$dark-grey: #485955;
+$medium-grey: #7a7776;
+$light-grey: #acacac;
+$lighter-grey: #eaeaea;
+$lightest-grey: #f9f9f9;
+$bg-grey: #333;
+
+$white: #ffffff;
+$black: #000000;
+
+// Sizing and weights
+$base-font-size: 100%;
+$base-font-weight: 500;
+$line-height: 1.7;
+
+$heading-font-weight: 600;
+$vertical-measure: 1.5em;
+
+//Miscellaneous
+$border-color: #dedede;
+$light-color: lighten($border-color, 50%);
+$background-color: #333;
+$text-color: #0b3143;
+$error-message-color: #d22630;
+$bg-color: #f0f0f0;
+$login-input: $bg-color;
