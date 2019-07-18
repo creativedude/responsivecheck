@@ -58,7 +58,6 @@ export default class ReactiveContainer extends React.Component<any, any> {
         console.log(this.state);
     }
     public render() {
-        console.log('rendering', this.state.Iframes);
         return (
             <div className="container">
                 <AddBlock addBlock={this.handleAdd} changeLink={this.handleLink}/>

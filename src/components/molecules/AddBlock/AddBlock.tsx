@@ -58,6 +58,11 @@ export default class Task extends React.Component<any, any> {
         this.state.changeLink(this.state.link)
     }
 
+    _handleKeyDown = (e:any) => {
+        if (e.key === 'Enter') {
+          this.state.changeLink(this.state.link)
+        }
+      }
     public render() {
         return (
             <div className="controlBlock">
@@ -77,10 +82,11 @@ export default class Task extends React.Component<any, any> {
                 </div>
                 <div className="linkInputs">
                     <div className="inputBlock">
-                        <label>Link</label>
-                        <input type="text" value={this.state.link} onChange={this.handleLinkInputChange}/>
+                        <label className="inline-label">Link</label>
+                        <input type="text" value={this.state.link} onKeyDown={this._handleKeyDown} onChange={this.handleLinkInputChange}/>
                     </div>
-                    <button onClick={this.handleLinkChange}>Set</button>
+                    {/* Put back in case of stupid users
+                        <button onClick={this.handleLinkChange}>Set</button>*/}
                 </div>
             </div>
         );
