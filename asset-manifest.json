@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/responsivecheck/static/css/main.ee1b5d56.chunk.css",
+    "main.css": "/responsivecheck/static/css/main.26c2111f.chunk.css",
     "main.js": "/responsivecheck/static/js/main.a5df7263.chunk.js",
     "main.js.map": "/responsivecheck/static/js/main.a5df7263.chunk.js.map",
     "runtime~main.js": "/responsivecheck/static/js/runtime~main.9d95377b.js",
@@ -8,8 +8,8 @@
     "static/js/2.bdd6eb80.chunk.js": "/responsivecheck/static/js/2.bdd6eb80.chunk.js",
     "static/js/2.bdd6eb80.chunk.js.map": "/responsivecheck/static/js/2.bdd6eb80.chunk.js.map",
     "index.html": "/responsivecheck/index.html",
-    "precache-manifest.5cdfc07021f657b04daf148cd9f016dd.js": "/responsivecheck/precache-manifest.5cdfc07021f657b04daf148cd9f016dd.js",
+    "precache-manifest.01459aac3af9198dc0ef52635afbf4c4.js": "/responsivecheck/precache-manifest.01459aac3af9198dc0ef52635afbf4c4.js",
     "service-worker.js": "/responsivecheck/service-worker.js",
-    "static/css/main.ee1b5d56.chunk.css.map": "/responsivecheck/static/css/main.ee1b5d56.chunk.css.map"
+    "static/css/main.26c2111f.chunk.css.map": "/responsivecheck/static/css/main.26c2111f.chunk.css.map"
   }
 }
