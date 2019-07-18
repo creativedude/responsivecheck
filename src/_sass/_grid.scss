@@ -39,8 +39,8 @@
 .grid-4 {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap:1rem;
-  grid-row-gap: 1rem;
+  grid-column-gap:2.125rem;
+  grid-row-gap: 2.125rem;
   .IframeWrapper {
     .decreasezoom {display:none;}
   }
@@ -93,7 +93,20 @@
     }
   }
 }
+.grid-1-2 {
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap:2.125rem;
+  grid-row-gap: 2.125rem;
+}
+.grid-3-2 {
+  display:grid;
+  grid-template-columns: 2fr 2fr;
+  grid-column-gap:2.125rem;
+  grid-row-gap: 2.125rem;
+}
 
+.employee-container {}
 
 
 

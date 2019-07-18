@@ -1,24 +1,45 @@
 import * as React from "react";
-
+import Modal from 'react-modal';
+Modal.setAppElement('#root')
 
 export default class Iframe extends React.Component<any, any> {
     private myRef: any;
+    private modalRef: any;
     private iframeRef: any;
+    private iframeBlock: any;
+    private setiframeBlockRef: any;
     constructor(props : any) {
         super(props);
         this.state = {
-        	link: this.props.link,
+            link: this.props.link,
             Iwidth: this.props.Iwidth,
             Iheight: this.props.Iheight,
+            Pwidth: this.props.Pwidth,
+            Pheight: this.props.Pheight,
+            pixratio: this.props.pixratio,
             id: this.props.id,
             zoomlevel: 1,
             name: this.props.name,
-            classes : this.props.Iwidth <= this.props.Iheight ? "IframeWrapper" : "IframeWrapper widewrapper",
-            removeBlock : this.props.removeBlock
+            gridsize :  1,
+            removeBlock : this.props.removeBlock,
+            modalzoomlevel: 1,
+            flipPropsFn: this.props.flipPropsFn
         };
         this.myRef = React.createRef();
+        this.iframeBlock = null;
         this.styles = this.styles.bind(this);
         this.removeFn = this.removeFn.bind(this);
+        this.modalRef = React.createRef();
+        this.openModal = this.openModal.bind(this);
+        this.afterOpenModal = this.afterOpenModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+        this.increaseFn = this.increaseFn.bind(this);
+        this.decreaseFn = this.decreaseFn.bind(this);
+        this.setzoom = this.setzoom.bind(this);
+        this.flipFn = this.flipFn.bind(this);
+        this.setiframeBlockRef = (element: any) => {
+            this.iframeBlock = element;
+        };
     }
     styles() {
         const initzoomlevel = this.iframeBlock ? (this.iframeBlock.offsetWidth - 40) / this.props.Iwidth : 1;
@@ -37,16 +58,107 @@ export default class Iframe extends React.Component<any, any> {
     removeFn() {
         this.state.removeBlock(this.state.id);
     }
+    increaseFn() {
+        let classes = "";
+        switch (this.state.gridsize) {
+            case 0:
+                classes="IframeWrapper";
+                break;
+            case 1: 
+                classes="IframeWrapper doublewrapper";
+                break;
+            case 2: 
+                classes="IframeWrapper triplewrapper";
+                break;
+            case 3: 
+                classes="IframeWrapper fullwrapper";
+                break;
+            default: 
+                classes="IframeWrapper";
+        }
+        if (this.iframeBlock) {
+            this.iframeBlock.className = classes; 
+        }
+        this.setState((prevState: any) => ({
+            gridsize: prevState.gridsize + 1
+        }));
+
+    }
+    decreaseFn() {
+        let classes = "";
+        switch (this.state.gridsize) {
+            case 2:
+                classes="IframeWrapper";
+                break;
+            case 3: 
+                classes="IframeWrapper doublewrapper";
+                break;
+            case 4: 
+                classes="IframeWrapper triplewrapper";
+                break;
+            default: 
+                classes="IframeWrapper";
+        }
+        if (this.iframeBlock) {
+            this.iframeBlock.className = classes; 
+        }
+        this.setState((prevState: any) => ({
+            gridsize: prevState.gridsize -1
+        }));
+    }
+    flipFn() {
+        this.state.flipPropsFn(this.props.id);
+        this.setState((prevState: any) => ({
+            Iwidth: prevState.Iwidth,
+            Iheight: prevState.Iheight,
+        }));
+    }
+    openModal() {
+        this.setState({modalIsOpen: true});
+    }
+     
+    afterOpenModal() {
+        // references are now sync'd and can be accessed.
+        // this.subtitle.style.color = '#f00';
+        const modalzoom = (this.modalRef.current.offsetWidth) / this.state.Iwidth;
+        this.setState({
+          modalzoomlevel: modalzoom > 1 ? 1 : modalzoom
+        });
+    }
+     
+    closeModal() {
+        this.setState({modalIsOpen: false});
+    }
+    setzoom (size:any) {
+        const zoom = (size - 30) / this.state.Iwidth;
+        this.setState({
+          zoomlevel: zoom > 1 ? 1 : zoom
+        });
+    }
     componentDidMount () {
-        const zoom = (this.myRef.current.offsetWidth - 30) / this.state.Iwidth;
+        const zoom = (this.iframeBlock.offsetWidth - 30) / this.state.Iwidth;
         this.setState({
           zoomlevel: zoom > 1 ? 1 : zoom
         });
     }
     public render() {
-
-        console.log('iframe state link',this.state.link);
-        console.log('iframe props link',this.props.link);
+        let classes = "";
+        switch (this.state.gridsize) {
+            case 1:
+                classes="IframeWrapper";
+                break;
+            case 2: 
+                classes="IframeWrapper doublewrapper";
+                break;
+            case 3: 
+                classes="IframeWrapper triplewrapper";
+                break;
+            case 4: 
+                classes="IframeWrapper fullwrapper";
+                break;
+            default: 
+                classes="IframeWrapper";
+        }
         return (
             <>
                 <div id={"foo"+this.state.id} className={classes} ref={this.setiframeBlockRef} >

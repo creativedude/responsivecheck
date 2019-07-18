@@ -122,3 +122,119 @@
     background-color:$nmlblue;
   }
 }
+.closebutton {
+  // position:absolute;
+  width:20px;
+  height:20px;
+  // right:0px;
+  // top:0px;
+  float:right;
+  margin-left:10px;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  padding:0px;
+  text-align:center;
+  line-height:0px;
+  font-size:21px;
+  padding-top: 0;
+  padding-bottom: 5px;
+}
+.zoombutton {
+  // position:absolute;
+  width:20px;
+  height:20px;
+  // right:0px;
+  // top:0px;
+  float:right;
+  margin-left:10px;
+  padding:0px;
+  text-align:center;
+  line-height:17px;
+  font-size:21px;
+  padding-top: 0;
+  padding-bottom: 5px;
+  position:relative;
+}
+.flip {
+  &:before {
+    content:"";
+    display:block;
+    width:10px;
+    height:10px;
+    border:1px solid #fff;
+    position:absolute;
+    border-right:1px solid transparent;
+    border-radius:100%;
+    top:4px;
+    left:4px;
+  }
+  &:after {
+    content:"";
+    display:block;
+    position:absolute;
+    right:4px;
+    top:4px;
+    border-right:1px solid #fff;
+    border-bottom:1px solid #fff;
+    width:3px;
+    height:3px;
+    -moz-transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+}
+.expandbutton {
+  position:relative;
+  width:20px;
+  height:20px;
+  // right:30px;
+  // top:0px;
+  float:right;
+  margin-left:10px;
+  padding:0px;
+  text-align:center;
+  line-height:0px;
+  font-size:21px;
+  padding-top: 0;
+  padding-bottom: 5px;
+  &:before, &:after {
+    display:block;
+    content:"";
+    position:absolute;
+  }
+  &:before {
+    border-left:1.1px solid #fff;
+    border-bottom:1.1px solid #fff;
+    width:5px;
+    height:5px;
+    left:5px;
+    bottom:5px;
+  }
+  &:after {
+    border-right:1.1px solid #fff;
+    border-top:1.1px solid #fff;
+    width:5px;
+    height:5px;
+    right:5px;
+    top:5px;
+  }
+}
+.btn-container {
+  display:block;
+  min-height:20px;
+  margin-top:16px;
+}
+.right-button {
+  float:right;
+}
+button {
+  @include inverse-breakpoint(500px) {
+    font-size:12px;
+    padding:5px 8px;
+  }
+}
