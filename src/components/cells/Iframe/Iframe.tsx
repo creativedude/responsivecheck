@@ -42,7 +42,7 @@ export default class Iframe extends React.Component<any, any> {
         };
     }
     styles() {
-        const initzoomlevel = this.iframeBlock ? (this.iframeBlock.offsetWidth - 40) / this.props.Iwidth : 1;
+        const initzoomlevel = this.iframeBlock ? (this.iframeBlock.offsetWidth - 35) / this.props.Iwidth : 1;
         const zoomlevel = initzoomlevel <=1 ? initzoomlevel : 1;
         if (this.iframeBlock) {
             this.iframeBlock.style.height = ((this.props.Iheight * zoomlevel) + 65) + "px";
