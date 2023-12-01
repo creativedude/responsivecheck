@@ -1,9 +1,10 @@
-import * as React from 'react'; 
+import React from 'react';
+import logo from './logo.svg';
 import ReactiveContainer from './components/templates/ReactiveContainer/ReactiveContainer';
 import devices from './data/devices';
 import './css/main.scss';
 
-const App: React.FC = () => {
+function App() {
   return (
     <div className="App">
       <ReactiveContainer devices={devices} />
