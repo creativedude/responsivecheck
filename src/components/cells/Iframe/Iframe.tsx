@@ -20,7 +20,7 @@ export default class Iframe extends React.Component<any, any> {
             id: this.props.id,
             zoomlevel: 1,
             name: this.props.name,
-            gridsize :  1,
+            gridsize :  2,
             removeBlock : this.props.removeBlock,
             modalzoomlevel: 1,
             flipPropsFn: this.props.flipPropsFn
